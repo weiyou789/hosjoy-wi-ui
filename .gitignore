@@ -1,0 +1,7 @@
+node_modules
+coverage
+dist
+demo
+.temp
+package-lock.json
+.idea

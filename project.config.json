@@ -1,0 +1,46 @@
+{
+  "miniprogramRoot": "./dist",
+  "projectname": "wi-ui",
+  "description": "wi-ui",
+  "appid": "wx31a0a1169149d42a",
+  "setting": {
+    "urlCheck": true,
+    "es6": false,
+    "postcss": false,
+    "minified": false
+  },
+  "compileType": "miniprogram",
+  "condition": {
+    "search": {
+      "current": -1,
+      "list": []
+    },
+    "conversation": {
+      "current": -1,
+      "list": []
+    },
+    "plugin": {
+      "current": -1,
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "current": -1,
+      "list": []
+    },
+    "miniprogram": {
+      "current": -1,
+      "list": [
+        {
+          "id": -1,
+          "name": "button组件",
+          "pathName": "pages/button/index",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}
