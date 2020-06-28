@@ -11,7 +11,8 @@ export default class Index extends Component {
     constructor(props){
         super(props)
         this.state = {
-            show:false
+            show:false,
+            value:[]
         }
     }
 
@@ -31,6 +32,17 @@ export default class Index extends Component {
 
     onClickItem(item){
         console.log(item,'列表被点击了')
+        const { value } = this.state
+        let arr = value
+        let index = arr.indexOf(item.id);
+        if (index > -1) {
+            arr.splice(index, 1);
+        } else {
+            arr.push(item.id)
+        }
+        this.setState({
+            value:arr
+        })
     }
     onShow(){
         this.setState({
@@ -42,36 +54,42 @@ export default class Index extends Component {
   }
 
   render () {
-      const { show } =  this.state
+      const { show,value } =  this.state
       const list = [
           {
               letter: 'A',
               letterList: [
                   {
-                      'name': '阿坝'
+                      name: '阿坝',
+                      id:1
                   },
                   {
-                      'name': '阿拉善'
+                      name: '阿拉善',
+                      id:2
                   }]
           },
           {
               letter: 'B',
               letterList: [
                   {
-                      'name': '北京'
+                      name: '北京',
+                      id:4
                   },
                   {
-                      'name': '保定'
+                      name: '保定',
+                      id:5
                   }]
           },
           {
               letter: 'C',
               letterList: [
                   {
-                      'name': '滁州'
+                      name: '滁州',
+                      id:6
                   },
                   {
-                      'name': '保定'
+                      name: '保定',
+                      id:7
                   }]
           }
       ]
@@ -90,7 +108,9 @@ export default class Index extends Component {
                   <WiIndexes
                       list={list}
                       defaultKeyProps={_props}
-                      onClick={this.onClickItem}
+                      onClick={this.onClickItem.bind(this)}
+                      thumb="https://hosjoy-hbp.oss-cn-hangzhou.aliyuncs.com/images/20200224/90534805-1506-4a90-bdfc-9086de19d7fb.png"
+                      value={value}
                   />
               </WiDrawer>
           </View>

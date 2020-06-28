@@ -1,5 +1,5 @@
 import Taro from '@tarojs/taro'
-import { View } from '@tarojs/components'
+import { View,Image } from '@tarojs/components'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import WiComponent from '../../../common/component'
@@ -37,6 +37,15 @@ export default class WiListItem extends WiComponent {
         return (
             <View className={rootClass} onClick={this.handleClick}>
                 <View className='wi-list__item-container'>
+                    {thumb && (
+                        <View className='wi-list__item-thumb item-thumb'>
+                            <Image
+                                className='item-thumb__info'
+                                mode='scaleToFill'
+                                src={thumb}
+                            />
+                        </View>
+                    )}
                     <View className='wi-list__item-content item-content'>
                         <View className='item-content__info'>
                             <View className='item-content__info-title'>{title}</View>

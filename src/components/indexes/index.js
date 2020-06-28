@@ -17,8 +17,18 @@ export default class WiIndexes extends WiComponent{
             _scrollTop: 0,
             _tipText: '',
             _isShowToast: false,
+            _value:props.value||[],
             isWEB: Taro.getEnv() === Taro.ENV_TYPE.WEB,
         }
+    }
+
+    componentWillReceiveProps(nextProps){
+        if (JSON.stringify(this.props) === JSON.stringify(nextProps)) return
+        const { value } = nextProps
+        this.setState({
+            _value:value
+        })
+        // console.log(nextProps)
     }
 
     handleTouchMove = event => {
@@ -47,6 +57,7 @@ export default class WiIndexes extends WiComponent{
     renderIndexes(){
         const {
             list,
+            thumb,
             defaultKeyProps
         } = this.props
         const {
@@ -54,6 +65,9 @@ export default class WiIndexes extends WiComponent{
             titleKey,
             intoKey,
         } = defaultKeyProps
+        const {
+            _value
+        } = this.state
         return list.map(dataList => {
             let _key = dataList[intoKey?intoKey:'key']
             let _title = dataList[titleKey?titleKey:'title']
@@ -72,6 +86,7 @@ export default class WiIndexes extends WiComponent{
                             key={item.name}
                             title={item.name}
                             onClick={this.handleClick.bind(this, item)}
+                            thumb={_value.indexOf(item.id)===-1?'':thumb}
                         />
                     ))}
                 </WiList>
@@ -158,7 +173,9 @@ WiIndexes.propTypes = {
         PropTypes.string
     ]),
     list: PropTypes.array,
+    value: PropTypes.array,
     onClick:PropTypes.func,
+    thumb:PropTypes.string,
     defaultKeyProps:PropTypes.object
 }
 
@@ -166,6 +183,8 @@ WiIndexes.defaultProps = {
     customStyle: '',
     className: '',
     list: [],
+    value:[],
+    thumb:'',
     defaultKeyProps:{
         titleKey:'',
         intoKey:'',
