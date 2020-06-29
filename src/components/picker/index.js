@@ -15,6 +15,7 @@ export default class WiPicker extends WiComponent{
             _value:[0,0,0]
         }
         this.listArrs = []
+        this.timer = null
         const { list,mode } = this.props
         if(mode === 'multiSelector'){
             this.initList(list)
@@ -38,10 +39,13 @@ export default class WiPicker extends WiComponent{
             arr.push(list[i])
         }
         this.listArrs.push(arr)
-        setTimeout(()=>{
+        this.timer = setTimeout(()=>{
             this.setState({
                 _lists:this.listArrs.reverse()
+            },()=>{
+                clearTimeout(this.timer)
             })
+
         })
 
     }
