@@ -1,15 +1,15 @@
-// import Nerv, { findDOMNode } from 'nervjs'
-// import { renderToString } from 'nerv-server'
-// import { Simulate, renderIntoDocument } from 'nerv-test-utils'
-// import WiButton from '../../.temp/components/button/index'
+import Nerv, { findDOMNode } from 'nervjs'
+import { renderToString } from 'nerv-server'
+import { Simulate, renderIntoDocument } from 'nerv-test-utils'
+import WiButton from '../../.temp/components/button/index'
 
 
-/*describe('WiButton Snap', () => {
+describe('WiButton Snap', () => {
     it('render WiButton -- props size(normal)', () => {
-        // const component = renderToString(<WiButton size='normal'>按钮</WiButton>)
-        // expect(component).toMatchSnapshot()
+        const component = renderToString(<WiButton size='normal'>按钮</WiButton>)
+        expect(component).toMatchSnapshot()
     })
-})*/
+})
 
 /*describe('AtButton Event', () => {
   it('AtButton onClick', () => {
