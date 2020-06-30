@@ -16,7 +16,6 @@ export default class WiIndexes extends WiComponent{
             _scrollIntoView: '',
             _scrollTop: 0,
             _tipText: '',
-            _isShowToast: false,
             _value:props.value||[],
             isWEB: Taro.getEnv() === Taro.ENV_TYPE.WEB,
         }
