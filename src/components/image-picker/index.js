@@ -38,16 +38,36 @@ const ENV = Taro.getEnv()
 
 export default class WiImagePicker extends WiComponent{
 
-    handleRemoveImg(){
-
+    handleRemoveImg = idx => {
+        const { files = [] } = this.props
+        if (ENV === Taro.ENV_TYPE.WEB) {
+            window.URL.revokeObjectURL(files[idx].url)
+        }
+        const newFiles = files.filter((file, i) => i !== idx)
+        this.props.onChange(newFiles, 'remove', idx)
     }
 
-    handleImageClick(){
-
-    }
+    handleImageClick = idx => this.props.onImageClick(idx, this.props.files[idx])
 
     chooseFile = () => {
-
+        const { files = [], multiple, count, sizeType, sourceType } = this.props
+        const filePathName = ENV === Taro.ENV_TYPE.ALIPAY ? 'apFilePaths' : 'tempFiles'
+        // const count = multiple ? 99 : 1
+        const params = {}
+        if (multiple) { params.count = 99 }
+        if (count) { params.count = count }
+        if (sizeType) { params.sizeType = sizeType }
+        if (sourceType) { params.sourceType = sourceType }
+        Taro.chooseImage(params).then(res => {
+            const targetFiles = res.tempFilePaths.map(
+                (path, i) => ({
+                    url: path,
+                    file: res[filePathName][i]
+                })
+            )
+            const newFiles = files.concat(targetFiles)
+            this.props.onChange(newFiles, 'add')
+        }).catch(this.props.onFail)
     }
 
     render(){

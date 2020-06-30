@@ -29,13 +29,13 @@ export default class Index extends Component {
   render () {
       const fileList = [
           {
-              url: 'https://jimczj.gitee.io/lazyrepay/aragaki1.jpeg',
+              url: 'https://timgsa.baidu.com/timg?image',
           },
           {
-              url: 'https://jimczj.gitee.io/lazyrepay/aragaki2.jpeg',
+              url: 'https://timgsa.baidu.com/timg?image',
           },
           {
-              url: 'https://jimczj.gitee.io/lazyrepay/aragaki3.png',
+              url: 'https://timgsa.baidu.com/timg?image',
           }]
       return (
           <View className='index'>
