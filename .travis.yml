@@ -9,4 +9,13 @@ install:
 before_script:
   - npm install -g @tarojs/cli@2.1.5
 script:
-  - npm run build:component && npm publish
+  - npm run build:component
+deploy:
+  provider: npm
+  email: "3433364@qq.com"
+  skip_cleanup: true
+  api_key: "745405e9-2e76-4e29-8109-cb4c865c545f"
+on:
+  tags: true
+  branch: master
+  tag: latest
