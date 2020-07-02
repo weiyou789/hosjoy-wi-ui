@@ -1,6 +1,6 @@
 {
   "name": "hosjoy-wi-ui",
-  "version": "1.3.0",
+  "version": "1.5.0",
   "private": false,
   "description": "wi-ui",
   "main": "dist/index.js",
@@ -44,6 +44,13 @@
   "author": "hosjoy",
   "license": "MIT",
   "dependencies": {
+    "classnames": "^2.2.6",
+    "babel-runtime": "^6.26.0",
+    "regenerator-runtime": "0.11.1",
+    "nerv-devtools": "^1.5.5",
+    "prop-types": "^15.6.2"
+  },
+  "devDependencies": {
     "@tarojs/components": "2.1.5",
     "@tarojs/components-qa": "2.1.5",
     "@tarojs/router": "2.1.5",
@@ -56,11 +63,6 @@
     "@tarojs/taro-tt": "2.1.5",
     "@tarojs/taro-weapp": "2.1.5",
     "@tarojs/taro-rn": "2.1.5",
-    "babel-runtime": "^6.26.0",
-    "regenerator-runtime": "0.11.1",
-    "nerv-devtools": "^1.5.5"
-  },
-  "devDependencies": {
     "@babel/core": "^7.10.2",
     "@babel/preset-env": "^7.10.2",
     "@tarojs/mini-runner": "2.1.5",
