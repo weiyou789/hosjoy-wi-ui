@@ -31,7 +31,7 @@ export default class Index extends Component {
     }
 
     onClickItem(item){
-        console.log(item,'列表被点击了')
+        console.log(item,'列表被点击了啊')
         const { value } = this.state
         let arr = value
         let index = arr.indexOf(item.id);
