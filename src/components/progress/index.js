@@ -32,22 +32,24 @@ export default class WiProgress extends WiComponent {
         const progressStyle = {
             width: percent && `${+percent}%`,
             height: strokeWidth && `${+strokeWidth}px`,
-            backgroundColor: color
+            backgroundColor: color,
+            'border-radius':strokeWidth?parseInt(+strokeWidth/2)+'px':'8px'
         }
 
         const bottomStyle = {
-            backgroundColor:bottomColor?bottomColor:'#f7f7f7'
+            backgroundColor:bottomColor?bottomColor:'#f7f7f7',
+            'border-radius':strokeWidth?parseInt(+strokeWidth/2)+'px':'8px'
         }
 
         return (
             <View className={rootClass}>
                 <View className='wi-progress__outer'>
                     <View className='wi-progress__outer-inner' style={bottomStyle}>
+                        {this.props.children}
                         <View
                             className='wi-progress__outer-inner-background'
                             style={progressStyle}
                         >
-                            {this.props.children}
                         </View>
                     </View>
                 </View>

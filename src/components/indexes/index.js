@@ -23,7 +23,7 @@ export default class WiIndexes extends WiComponent{
     }
 
     componentWillReceiveProps(nextProps){
-        if (JSON.stringify(this.props) === JSON.stringify(nextProps)) return
+        // if (JSON.stringify(this.props) === JSON.stringify(nextProps)) return
         const { value } = nextProps
         this.setState({
             _value:value

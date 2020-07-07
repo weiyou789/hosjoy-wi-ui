@@ -26,12 +26,12 @@ export default class Index extends Component {
       return (
           <View className='index'>
               <WiProgress
-                  percent={75}
+                  percent={20}
                   strokeWidth={10}
                   status='success'
-                  bottomColor='#000'
+                  bottomColor='#f4f4f4'
               >
-                  <View className='weitest'>已经抢购50件</View>
+                  <View className='weitest'>已经抢购50件已经抢购50件已经抢购50件已经抢购50件已经抢购50件</View>
               </WiProgress>
           </View>
       )

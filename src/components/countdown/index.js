@@ -87,10 +87,15 @@ export default class WiCountdown extends WiComponent {
     }
 
     renderTime(num,separator){
+        const { classNameText } = this.props
         return (
             <View className='wi-countdown__item'>
                 <View className='wi-countdown__time-box'>
-                    <Text className='at-countdown__time'>
+                    <Text className={
+                        classNames({
+                            'at-countdown__time':true,
+                        },classNameText)}
+                    >
                         {num<=9?`0${num}`:num}
                     </Text>
                 </View>
@@ -116,7 +121,8 @@ export default class WiCountdown extends WiComponent {
             className,
             customStyle,
             format,
-            isShowDay
+            isShowDay,
+            isShowMillSeconds
         } =  this.props
         const {
             day,
@@ -137,8 +143,8 @@ export default class WiCountdown extends WiComponent {
                 {isShowDay&&this.renderTime(day,format.day)}
                 {this.renderTime(hours,format.hours)}
                 {this.renderTime(minutes,format.minutes)}
-                {this.renderTime(seconds,format.seconds)}
-                {this.renderTime(milliseconds,'')}
+                {this.renderTime(seconds,isShowMillSeconds?format.seconds:'')}
+                {isShowMillSeconds&&this.renderTime(milliseconds,'')}
             </View>
         )
     }
@@ -147,8 +153,10 @@ export default class WiCountdown extends WiComponent {
 
 WiCountdown.defaultProps = {
     className:'',
+    classNameText:'',
     customStyle:'',
     isShowDay:false,
+    isShowMillSeconds:false,
     format: {
         day: ':',
         hours: ':',
@@ -169,8 +177,13 @@ WiCountdown.PropTypes = {
         PropTypes.array,
         PropTypes.string,
     ]),
+    classNameText: PropTypes.oneOfType([
+        PropTypes.array,
+        PropTypes.string,
+    ]),
     format: PropTypes.object,
     isShowDay: PropTypes.bool,
+    isShowMillSeconds: PropTypes.bool,
     endTime: PropTypes.oneOfType([
         PropTypes.object,
         PropTypes.string,

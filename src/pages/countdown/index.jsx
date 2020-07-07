@@ -39,6 +39,7 @@ export default class Index extends Component {
                   endTime={this.state.endTime}
                   isShowDay
                   onTimeUp={this.timeoutDone}
+                  classNameText="test1"
               />
           </View>
       )
