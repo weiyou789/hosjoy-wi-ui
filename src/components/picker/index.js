@@ -94,7 +94,6 @@ export default class WiPicker extends WiComponent{
     render(){
         const { mode,rangeKey,start,end } = this.props
         const { _lists } = this.state
-        console.log(1111, mode)
         if(mode==='date'||mode==='time'){
             return <Picker
                 mode={mode}
