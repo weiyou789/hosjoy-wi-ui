@@ -19,6 +19,9 @@ export { default as WiIndexes} from './components/indexes'
 export { default as WiActionSheet} from './components/action-sheet'
 export { default as WiImagePicker} from './components/image-picker'
 export { default as WiModal} from './components/modal'
+export { default as WiModalHeader } from './components/modal/header'
+export { default as WiModalContent } from './components/modal/content'
+export { default as WiModalAction } from './components/modal/action'
 export { default as WiPicker} from './components/picker'
 
 /* 私有的组件  */
