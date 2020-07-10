@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const isBuildComponent = process.env.TARO_BUILD_TYPE === 'component'
 
 const config = {
-  projectName: 'wi-ui',
+  projectName: 'hosjoy-wi-ui',
   designWidth: 750,
   sourceRoot: 'src',
   outputRoot: isBuildComponent ? 'dist' : `demo/${process.env.TARO_ENV}`,
@@ -23,7 +23,7 @@ const config = {
   },
   defineConstants: {},
   alias: {
-    'wi-ui': path.resolve(__dirname, '../src/ui.js'),
+    'hosjoy-wi-ui': path.resolve(__dirname, '../src/ui.js'),
   },
   mini: {},
   h5: {
@@ -50,7 +50,7 @@ if (isBuildComponent) {
         path: path.join(process.cwd(), 'dist', 'h5'),
         filename: 'index.js',
         libraryTarget: 'umd',
-        library: 'wi-ui'
+        library: 'hosjoy-wi-ui'
       },
       externals: {
         nervjs: 'commonjs2 nervjs',

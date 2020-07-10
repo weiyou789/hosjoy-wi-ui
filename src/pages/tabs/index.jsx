@@ -3,7 +3,7 @@ import { View } from '@tarojs/components'
 import {
     WiTabs,
     WiTabsPane,
-} from 'wi-ui'
+} from 'hosjoy-wi-ui'
 import './index.scss'
 
 

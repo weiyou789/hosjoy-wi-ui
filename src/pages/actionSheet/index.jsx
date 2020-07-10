@@ -4,7 +4,7 @@ import {
     WiActionSheet,
     WiList,
     WiListItem
-} from 'wi-ui'
+} from 'hosjoy-wi-ui'
 import './index.scss'
 
 

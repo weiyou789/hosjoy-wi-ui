@@ -3,7 +3,7 @@ import { View } from '@tarojs/components'
 import {
     WiIndexes,
     WiDrawer
-} from 'wi-ui'
+} from 'hosjoy-wi-ui'
 import './index.scss'
 
 

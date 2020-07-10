@@ -2,7 +2,7 @@ import Taro, { Component } from '@tarojs/taro'
 import { View } from '@tarojs/components'
 import {
     WiFloatLayout
-} from 'wi-ui'
+} from 'hosjoy-wi-ui'
 import './index.scss'
 
 

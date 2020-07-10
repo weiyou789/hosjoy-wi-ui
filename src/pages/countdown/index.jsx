@@ -2,7 +2,7 @@ import Taro, { Component } from '@tarojs/taro'
 import { View } from '@tarojs/components'
 import {
     WiCountdown,
-} from 'wi-ui'
+} from 'hosjoy-wi-ui'
 import './index.scss'
 
 
