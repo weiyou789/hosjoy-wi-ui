@@ -60,6 +60,11 @@ export default class WiPicker extends WiComponent{
         confirmClick(currentValue)
     }
 
+    onChangeTime(e){
+        const { confirmClick } = this.props
+        confirmClick(e)
+    }
+
     onColumnChange(e){
         this.makeList(e.detail)
     }
@@ -87,10 +92,22 @@ export default class WiPicker extends WiComponent{
 
 
     render(){
-        const { mode,rangeKey } = this.props
+        const { mode,rangeKey,start,end } = this.props
         const { _lists } = this.state
+        if(mode==='date'||mode==='time'){
+            return <Picker
+                mode={mode}
+                start={start}
+                end={end}
+                onChange={this.onChangeTime}
+            >
+                {this.props.children}
+            </Picker>
+        }
         return <Picker
             mode={mode}
+            start={start}
+            end={end}
             range={_lists}
             onChange={this.onChange}
             onColumnChange={this.onColumnChange}
@@ -99,6 +116,7 @@ export default class WiPicker extends WiComponent{
         >
             {this.props.children}
         </Picker>
+
     }
 }
 
@@ -106,12 +124,16 @@ WiPicker.defaultProps = {
     mode:'multiSelector',
     list:[],
     rangeKey:'label',
-    confirmClick(){}
+    confirmClick(){},
+    start:'2015-09-01',
+    end:'2020-09-01'
 }
 
 WiPicker.PropTypes = {
     mode:PropTypes.oneOf(['selector', 'multiSelector','time','date','region']),
     list:PropTypes.array,
     confirmClick:PropTypes.func,
-    rangeKey:PropTypes.string
+    rangeKey:PropTypes.string,
+    start:PropTypes.string,
+    end:PropTypes.string
 }
