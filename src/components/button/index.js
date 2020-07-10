@@ -42,13 +42,7 @@ export default class WiButton extends WiComponent{
             disabled,
             openType,
             lang,
-            formType,
-            // sessionFrom,
-            // sendMessageTitle,
-            // sendMessagePath,
-            // sendMessageImg,
-            // showMessageCard,
-            // appParameter
+            formType
         } = this.props
         const {
             isWEB
@@ -83,7 +77,6 @@ export default class WiButton extends WiComponent{
             type = '',
             circle,
             full,
-            // loading,
             disabled,
             customStyle
         } = this.props

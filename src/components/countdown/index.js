@@ -135,8 +135,7 @@ export default class WiCountdown extends WiComponent {
             <View
                 className={
                     classNames({
-                        'wi-countdown': true,
-                        // 'at-countdown--card': isCard
+                        'wi-countdown': true
                     }, className)}
                 style={customStyle}
             >
