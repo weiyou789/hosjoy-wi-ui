@@ -55,7 +55,7 @@
       width: 60px;
       height: 2PX;
       border-radius: 1PX;
-      background: $at-image-picker-btn-add-color;
+      background: $wi-image-picker-btn-add-color;
 
       &:nth-child(1) {
         transform: translate3d(-50%, -50%, 0) rotate(90deg);
@@ -81,7 +81,7 @@
     border-radius: 50%;
     overflow: hidden;
     text-align: center;
-    background-color: $at-image-picker-btn-remove-bg-color;
+    background-color: $wi-image-picker-btn-remove-bg-color;
     opacity: 0.8;
     box-sizing: border-box;
 
@@ -95,7 +95,7 @@
       width: 10PX;
       height: 1PX;
       border-radius: 1PX;
-      background: $at-image-picker-btn-remove-color;
+      background: $wi-image-picker-btn-remove-color;
     }
 
     &::before {

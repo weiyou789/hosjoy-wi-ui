@@ -1,7 +1,7 @@
 @import '../variables/default.scss';
 @import '../mixins/index.scss';
 
-$at-action-sheet-duration: 300ms;
+$wi-action-sheet-duration: 300ms;
 
 .wi-action-sheet {
   position: fixed;
@@ -11,14 +11,14 @@ $at-action-sheet-duration: 300ms;
   left: 0;
   z-index: $zindex-action-sheet;
   visibility: hidden;
-  transition: visibility $at-action-sheet-duration $timing-func;
+  transition: visibility $wi-action-sheet-duration $timing-func;
 
   /* elements */
   &__overlay {
     @include overlay;
 
     opacity: 0;
-    transition: opacity $at-action-sheet-duration ease-in;
+    transition: opacity $wi-action-sheet-duration ease-in;
   }
 
   &__container {
@@ -30,7 +30,7 @@ $at-action-sheet-duration: 300ms;
     text-align: center;
     background-color: $color-white;
     transform: translate3d(0, 100%, 0);
-    transition: transform $at-action-sheet-duration $timing-func;
+    transition: transform $wi-action-sheet-duration $timing-func;
   }
 
   &__header {

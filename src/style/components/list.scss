@@ -1,7 +1,7 @@
 @import "../variables/default.scss";
 @import "../mixins/index.scss";
 
-$at-list-item-horizontal-padding: 24px;
+$wi-list-item-horizontal-padding: 24px;
 
 @mixin squareImg($size: 56px) {
   width: $size;
@@ -23,7 +23,7 @@ $at-list-item-horizontal-padding: 24px;
     @include align-items(center);
 
     .item-icon {
-      margin-right: $at-list-item-horizontal-padding;
+      margin-right: $wi-list-item-horizontal-padding;
     }
   }
 
@@ -31,7 +31,7 @@ $at-list-item-horizontal-padding: 24px;
     padding: $spacing-v-lg $spacing-h-lg;
     position: relative;
     box-sizing: border-box;
-    color: $at-list-text-color;
+    color: $wi-list-text-color;
     font-size: $font-size-lg;
     line-height: $line-height-zh;
     @include active;
@@ -39,8 +39,8 @@ $at-list-item-horizontal-padding: 24px;
 
     &--thumb {
       .item-thumb {
-        margin-right: $at-list-item-horizontal-padding;
-        @include squareImg($at-list-thumb-size);
+        margin-right: $wi-list-item-horizontal-padding;
+        @include squareImg($wi-list-thumb-size);
       }
     }
 
@@ -70,7 +70,7 @@ $at-list-item-horizontal-padding: 24px;
         }
 
         &-note {
-          color: $at-list-content-color;
+          color: $wi-list-content-color;
           font-size: $font-size-base;
           line-height: $line-height-zh;
         }
@@ -91,7 +91,7 @@ $at-list-item-horizontal-padding: 24px;
         @include line(1);
 
         max-width: 100%;
-        color: $at-list-extra-color;
+        color: $wi-list-extra-color;
         padding-right: 30px;
         font-size: $font-size-lg;
         vertical-align: middle;
@@ -102,7 +102,7 @@ $at-list-item-horizontal-padding: 24px;
       //   margin-right: -12px;
 
       //   &-arrow {
-      //     color: $at-list-arrow-color;
+      //     color: $wi-list-arrow-color;
       //     font-size: 48px;
       //   }
       // }
@@ -114,7 +114,7 @@ $at-list-item-horizontal-padding: 24px;
         position: absolute;
 
         &-arrow {
-          color: $at-list-arrow-color;
+          color: $wi-list-arrow-color;
           font-size: 48px;
         }
         // margin-left: $spacing-h-sm;
@@ -126,7 +126,7 @@ $at-list-item-horizontal-padding: 24px;
       }
 
       &__image {
-        @include squareImg($at-list-thumb-size);
+        @include squareImg($wi-list-thumb-size);
 
         vertical-align: middle;
         margin-right: 30px;
@@ -147,9 +147,9 @@ $at-list-item-horizontal-padding: 24px;
   }
 
   &__item-extra {
-    // @include flex(0, 0, $at-list-extra-width);
+    // @include flex(0, 0, $wi-list-extra-width);
 
-    max-width: $at-list-extra-width;
+    max-width: $wi-list-extra-width;
     text-align: right;
   }
 

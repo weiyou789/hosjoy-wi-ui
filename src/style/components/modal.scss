@@ -1,7 +1,7 @@
 @import '../variables/default.scss';
 @import '../mixins/index.scss';
 
-$at-modal-duration: 200ms;
+$wi-modal-duration: 200ms;
 
 .wi-modal {
   position: fixed;
@@ -10,14 +10,14 @@ $at-modal-duration: 200ms;
   top: 0;
   left: 0;
   visibility: hidden;
-  transition: visibility $at-modal-duration ease-in;
+  transition: visibility $wi-modal-duration ease-in;
   z-index: $zindex-modal;
 
   /* elements */
   &__overlay,
   &__container {
     opacity: 0;
-    transition: opacity $at-modal-duration ease-in;
+    transition: opacity $wi-modal-duration ease-in;
   }
 
   &__overlay {
@@ -27,9 +27,9 @@ $at-modal-duration: 200ms;
   &__container {
     @include absolute-center();
 
-    width: $at-modal-width;
+    width: $wi-modal-width;
     border-radius: $border-radius-lg;
-    background-color: $at-modal-bg-color;
+    background-color: $wi-modal-bg-color;
     overflow: hidden;
   }
 
@@ -38,7 +38,7 @@ $at-modal-duration: 200ms;
     @include line(1);
 
     padding: $spacing-v-md $spacing-h-lg;
-    color: $at-modal-header-text-color;
+    color: $wi-modal-header-text-color;
     font-size: $font-size-lg;
     text-align: center;
   }
@@ -47,7 +47,7 @@ $at-modal-duration: 200ms;
     padding: $spacing-h-xl $spacing-h-lg;
     min-height: 180px;
     max-height: 840px;
-    color: $at-modal-content-text-color;
+    color: $wi-modal-content-text-color;
     font-size: $font-size-base;
     box-sizing: border-box;
   }
@@ -66,7 +66,7 @@ $at-modal-duration: 200ms;
         margin-top: 0;
         min-width: 160px;
         height: 88px;
-        color: $at-modal-btn-default-color;
+        color: $wi-modal-btn-default-color;
         font-size: $font-size-base;
         line-height: 86px;
         outline: 0;
@@ -86,13 +86,13 @@ $at-modal-duration: 200ms;
         }
 
         &:last-child {
-          color: $at-modal-btn-confirm-color;
+          color: $wi-modal-btn-confirm-color;
         }
       }
     }
 
     &--simple .wi-modal__action > button:last-child:nth-child(2) {
-      color: $at-modal-btn-confirm-color;
+      color: $wi-modal-btn-confirm-color;
     }
   }
 

@@ -2,7 +2,7 @@
 @import '../mixins/index.scss';
 
 $component:'.wi-tabs';
-$at-tabs-pane-min-height: 100px;
+$wi-tabs-pane-min-height: 100px;
 
 #{$component} {
   width: 100%;
@@ -14,8 +14,8 @@ $at-tabs-pane-min-height: 100px;
     position: relative;
     flex: 1;
     padding: $spacing-v-lg $spacing-h-lg;
-    color: $at-tabs-color;
-    font-size: $at-tabs-font-size;
+    color: $wi-tabs-color;
+    font-size: $wi-tabs-font-size;
     text-overflow: ellipsis;
     overflow: hidden;
 
@@ -25,14 +25,14 @@ $at-tabs-pane-min-height: 100px;
       left: 0;
       bottom: 0;
       width: 100%;
-      height: $at-tabs-line-height;
-      background-color: $at-tabs-color-active;
+      height: $wi-tabs-line-height;
+      background-color: $wi-tabs-color-active;
       transform: scaleX(0);
       transition: all 0.15s;
     }
 
     &--active {
-      color: $at-tabs-color-active;
+      color: $wi-tabs-color-active;
 
       #{$component}__item-underline {
         transform: scaleX(1);
@@ -46,7 +46,7 @@ $at-tabs-pane-min-height: 100px;
     width: 100%;
     text-align: center;
     white-space: nowrap;
-    background-color: $at-tabs-bg-color;
+    background-color: $wi-tabs-bg-color;
     box-sizing: border-box;
     overflow: -moz-scrollbars-none;
 
@@ -75,8 +75,8 @@ $at-tabs-pane-min-height: 100px;
     bottom: auto;
     right: auto;
     width: 600%;
-    height: $at-tabs-line-height;
-    background-color: $at-tabs-underline-color;
+    height: $wi-tabs-line-height;
+    background-color: $wi-tabs-underline-color;
   }
 
   /* modifiers */
@@ -101,7 +101,7 @@ $at-tabs-pane-min-height: 100px;
     #{$component}__body {
       display: inline-block;
       flex: 1;
-      height: $at-tabs-pane-min-height;
+      height: $wi-tabs-pane-min-height;
       width: auto;
     }
 
@@ -109,7 +109,7 @@ $at-tabs-pane-min-height: 100px;
       top: 0;
       left: 0;
       bottom: auto;
-      width: $at-tabs-line-height;
+      width: $wi-tabs-line-height;
       height: 100%;
     }
 
@@ -130,7 +130,7 @@ $at-tabs-pane-min-height: 100px;
         right: 0;
         bottom: auto;
         left: auto;
-        width: $at-tabs-line-height;
+        width: $wi-tabs-line-height;
         height: 100%;
         transform: scaleY(0);
       }
@@ -148,7 +148,7 @@ $at-tabs-pane-min-height: 100px;
 
 #{$component}--scroll#{$component}--horizontal#{$component}--SWAN {
   #{$component}__item-underline {
-    bottom: $at-tabs-line-height;
+    bottom: $wi-tabs-line-height;
   }
 }
 

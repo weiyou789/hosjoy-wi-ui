@@ -1,7 +1,7 @@
 @import '../variables/default.scss';
 @import '../mixins/index.scss';
 
-$at-drawer-duration: 300ms;
+$wi-drawer-duration: 300ms;
 
 .wi-drawer {
   position: relative;
@@ -16,14 +16,14 @@ $at-drawer-duration: 300ms;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.3);
     opacity: 0;
-    transition: opacity $at-drawer-duration $timing-func;
+    transition: opacity $wi-drawer-duration $timing-func;
   }
 
   &__content {
     position: fixed;
     top: 0;
     bottom: 0;
-    width: $at-drawer-content-width;
+    width: $wi-drawer-content-width;
     text-align: left;
     background-color: $color-bg;
     opacity: 0;

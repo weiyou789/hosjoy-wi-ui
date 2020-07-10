@@ -25,16 +25,16 @@
 
     &-inner {
       width: 100%;
-      background-color: $at-progress-inner-bg-color;
-      border-radius: $at-progress-height / 2;
+      background-color: $wi-progress-inner-bg-color;
+      border-radius: $wi-progress-height / 2;
       vertical-align: middle;
       overflow: hidden;
 
       &-background {
         position: relative;
-        height: $at-progress-height;
-        border-radius: $at-progress-height / 2;
-        background-color: $at-progress-bar-bg-color;
+        height: $wi-progress-height;
+        border-radius: $wi-progress-height / 2;
+        background-color: $wi-progress-bar-bg-color;
         transition: all 0.3s $ease-in-out-quad;
         overflow: hidden;
       }
@@ -44,11 +44,11 @@
   &__content {
     flex: 1 1 70px;
     margin-left: 10px;
-    font-size: $at-progress-text-size;
+    font-size: $wi-progress-text-size;
     text-align: center;
 
     .at-icon {
-      font-size: $at-progress-icon-size;
+      font-size: $wi-progress-icon-size;
     }
   }
 
@@ -62,8 +62,8 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: $at-progress-bar-bg-color-active;
-      border-radius: $at-progress-height / 2;
+      background: $wi-progress-bar-bg-color-active;
+      border-radius: $wi-progress-height / 2;
       animation: progress-active 2s $ease-out-quad infinite;
     }
   }

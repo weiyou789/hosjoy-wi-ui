@@ -8,7 +8,7 @@
 
 .wi-countdown {
   display: inline-block;
-  min-height: $at-countdown-font-size;
+  min-height: $wi-countdown-font-size;
 
   /* elements */
   &__item {
@@ -19,17 +19,17 @@
   &__time-box {
     display: inline-block;
     text-align: center;
-    min-width: $at-countdown-font-size;
+    min-width: $wi-countdown-font-size;
 
     font: {
-      size: $at-countdown-font-size;
+      size: $wi-countdown-font-size;
       // family: countDownFont;
       style: normal;
       weight: 400;
       variant: normal;
     }
 
-    color: $at-countdown-num-color;
+    color: $wi-countdown-num-color;
     text-transform: none;
     text-rendering: auto;
     line-height: 1;
@@ -51,10 +51,10 @@
       display: inline-block;
       position: relative;
       padding: $spacing-v-xs 0;
-      color: $at-countdown-card-num-color;
+      color: $wi-countdown-card-num-color;
       border: 1PX solid $color-border-grey;
       border-radius: $border-radius-md;
-      background-color: $at-countdown-card-num-bg-color;
+      background-color: $wi-countdown-card-num-bg-color;
 
       .wi-countdown__time {
         position: relative;

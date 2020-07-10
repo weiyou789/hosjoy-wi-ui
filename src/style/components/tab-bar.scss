@@ -1,42 +1,42 @@
 @import '../variables/default.scss';
 @import '../mixins/index.scss';
 
-$at-tab-bar-min-height: 50px;
-$at-tab-bar-title-max-width: 200px;
+$wi-tab-bar-min-height: 50px;
+$wi-tab-bar-title-max-width: 200px;
 
 .at-tab-bar {
   display: flex;
   padding: $spacing-v-sm 0 $spacing-v-xs;
   width: 100%;
-  min-height: $at-tab-bar-min-height;
+  min-height: $wi-tab-bar-min-height;
   justify-content: center;
   align-items: start;
   text-align: center;
   box-sizing: border-box;
-  background-color: $at-tab-bar-bg-color;
+  background-color: $wi-tab-bar-bg-color;
   @include hairline-top();
 
   /* elements */
   &__item {
     flex: 1;
     padding: $spacing-v-sm $spacing-v-sm 0;
-    color: $at-tab-bar-color;
+    color: $wi-tab-bar-color;
     font-size: 0;
     transition: all 0.2s;
 
     &--active {
-      color: $at-tab-bar-color-active;
+      color: $wi-tab-bar-color-active;
     }
   }
 
   &__icon {
-    font-size: $at-tab-bar-icon-font-size;
+    font-size: $wi-tab-bar-icon-font-size;
     line-height: 1;
   }
 
   &__inner-img {
-    width: $at-tab-bar-icon-image-size;
-    height: $at-tab-bar-icon-image-size;
+    width: $wi-tab-bar-icon-image-size;
+    height: $wi-tab-bar-icon-image-size;
 
     &--inactive {
       display: none;
@@ -46,8 +46,8 @@ $at-tab-bar-title-max-width: 200px;
   &__title {
     display: block;
     padding: $spacing-v-xs 0;
-    max-width: $at-tab-bar-title-max-width;
-    font-size: $at-tab-bar-font-size;
+    max-width: $wi-tab-bar-title-max-width;
+    font-size: $wi-tab-bar-font-size;
     line-height: $line-height-base;
     white-space: nowrap;
     overflow: hidden;
