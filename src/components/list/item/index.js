@@ -64,6 +64,7 @@ WiListItem.defaultProps = {
     title: '',
     thumb: '',
     hasBorder: true,
+    className:'',
     onClick: () => {}
 }
 
@@ -73,5 +74,9 @@ WiListItem.propTypes = {
     title: PropTypes.string,
     thumb: PropTypes.string,
     onClick: PropTypes.func,
-    hasBorder: PropTypes.bool
+    hasBorder: PropTypes.bool,
+    className: PropTypes.oneOfType([
+        PropTypes.array,
+        PropTypes.string,
+    ])
 }

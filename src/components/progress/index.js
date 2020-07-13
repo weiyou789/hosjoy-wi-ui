@@ -70,5 +70,9 @@ WiProgress.propTypes = {
     status: PropTypes.string,
     percent: PropTypes.number,
     strokeWidth: PropTypes.number,
-    isHidePercent: PropTypes.bool
+    isHidePercent: PropTypes.bool,
+    className: PropTypes.oneOfType([
+        PropTypes.array,
+        PropTypes.string,
+    ])
 }

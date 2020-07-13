@@ -98,6 +98,7 @@ WiActionSheet.defaultProps = {
     title: '',
     cancelText: '',
     isOpened: false,
+    className:'',
     onClose(){}
 }
 
@@ -106,4 +107,8 @@ WiActionSheet.propTypes = {
     onClose: PropTypes.func,
     isOpened: PropTypes.bool,
     cancelText: PropTypes.string,
+    className: PropTypes.oneOfType([
+        PropTypes.array,
+        PropTypes.string,
+    ])
 }

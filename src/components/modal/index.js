@@ -122,7 +122,8 @@ export default class WiModal extends WiComponent{
 
 
 WiModal.defaultProps = {
-    closeOnClickOverlay: true
+    closeOnClickOverlay: true,
+    className:''
 }
 
 WiModal.propTypes = {
@@ -133,5 +134,9 @@ WiModal.propTypes = {
     content: PropTypes.string,
     closeOnClickOverlay: PropTypes.bool,
     cancelText: PropTypes.string,
-    confirmText: PropTypes.string
+    confirmText: PropTypes.string,
+    className: PropTypes.oneOfType([
+        PropTypes.array,
+        PropTypes.string,
+    ])
 }

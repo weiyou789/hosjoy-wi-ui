@@ -1,6 +1,6 @@
 {
   "name": "hosjoy-wi-ui",
-  "version": "1.5.6",
+  "version": "1.5.7",
   "private": false,
   "description": "wi-ui",
   "main": "dist/index.js",

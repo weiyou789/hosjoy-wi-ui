@@ -23,6 +23,7 @@ export { default as WiModalHeader } from './components/modal/header'
 export { default as WiModalContent } from './components/modal/content'
 export { default as WiModalAction } from './components/modal/action'
 export { default as WiPicker} from './components/picker'
+export { default as WiSearchBar} from './components/search-bar'
 
 /* 私有的组件  */
 // export { default as AtLoading } from './components/loading'

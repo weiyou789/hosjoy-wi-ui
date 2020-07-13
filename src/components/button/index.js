@@ -111,6 +111,7 @@ WiButton.defaultProps = {
     customStyle: {},
     openType:'',
     lang: 'en',
+    className:'',
     onClick:()=>{},
     onGetUserInfo:()=>{},
     onGetPhoneNumber:()=>{}
@@ -127,5 +128,9 @@ WiButton.PropTypes = {
     openType:PropTypes.oneOf(['contact', 'share', 'getUserInfo', 'getPhoneNumber', 'launchApp', 'openSetting', 'feedback', 'getRealnameAuthInfo', '']),
     lang: PropTypes.string,
     onGetUserInfo: PropTypes.func,
-    onGetPhoneNumber: PropTypes.func
+    onGetPhoneNumber: PropTypes.func,
+    className: PropTypes.oneOfType([
+        PropTypes.array,
+        PropTypes.string,
+    ])
 }

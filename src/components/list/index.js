@@ -19,9 +19,14 @@ export default class WiList extends WiComponent {
 }
 
 WiList.defaultProps = {
-    hasBorder: true
+    hasBorder: true,
+    className:''
 }
 
 WiList.PropTypes = {
-    hasBorder: PropTypes.bool
+    hasBorder: PropTypes.bool,
+    className: PropTypes.oneOfType([
+        PropTypes.array,
+        PropTypes.string,
+    ])
 }

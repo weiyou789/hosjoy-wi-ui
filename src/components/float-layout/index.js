@@ -94,6 +94,7 @@ export default class WiFloatLayout extends WiComponent{
 WiFloatLayout.defaultProps = {
     isOpened:false,
     title:'',
+    className:'',
     onClose(){},
     onScroll(){},
     scrollX:false,
@@ -106,5 +107,9 @@ WiFloatLayout.PropTypes = {
     onClose: PropTypes.func,
     onScroll:PropTypes.func,
     title: PropTypes.string,
-    renderTit:PropTypes.node
+    renderTit:PropTypes.node,
+    className: PropTypes.oneOfType([
+        PropTypes.array,
+        PropTypes.string,
+    ])
 }

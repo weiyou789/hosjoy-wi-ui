@@ -33,7 +33,8 @@ class App extends Component {
             'pages/actionSheet/index',
             'pages/imagePicker/index',
             'pages/modal/index',
-            'pages/picker/index'
+            'pages/picker/index',
+            'pages/searchBar/index'
         ],
         window: {
             backgroundTextStyle: 'light',

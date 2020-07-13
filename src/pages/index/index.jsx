@@ -58,6 +58,7 @@ export default class Index extends Component {
                     <WiListItem onClick={()=>this.jumpLink('imagePicker')} title="imagePicker" />
                     <WiListItem onClick={()=>this.jumpLink('modal')} title="modal" />
                     <WiListItem onClick={()=>this.jumpLink('picker')} title="picker" />
+                    <WiListItem onClick={()=>this.jumpLink('searchBar')} title="searchBar" />
                 </WiList>
             </View>
         )

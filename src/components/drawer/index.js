@@ -98,6 +98,7 @@ WiDrawer.defaultProps = {
     mask: true,
     width: '',
     right: false,
+    className: '',
     onClose(){}
 }
 
@@ -107,4 +108,8 @@ WiDrawer.propTypes = {
     width: PropTypes.string,
     right:PropTypes.bool,
     onClose: PropTypes.func,
+    className: PropTypes.oneOfType([
+        PropTypes.array,
+        PropTypes.string,
+    ]),
 }

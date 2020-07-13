@@ -55,9 +55,7 @@ export default class Index extends Component {
   }
 
   render () {
-      // const { show } =  this.state
-      // const _list = [['美国', '中国', '巴西', '日本'],['上海','北京','南京']]
-      /*const _list = [
+      const _list = [
           {
               label:'美国',
               children:[
@@ -161,13 +159,12 @@ export default class Index extends Component {
                   },
               ]
           }
-      ]*/
-      const _lists = Taro.getStorageSync('citysData')
-      // console.log(111, _lists)
+      ]
+      // const _lists = Taro.getStorageSync('citysData')
       return (
           <View className='index'>
               <WiPicker
-                  list={_lists}
+                  list={_list}
                   rangeKey='name'
                   confirmClick={this.onConfirmTest.bind(this)}
               >
