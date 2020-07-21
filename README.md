@@ -169,7 +169,7 @@ export default class Index extends Component {
           <View className='index'>
               <WiPicker
                   list={_list}
-                  rangeKey='name'
+                  rangeKey='label'
                   confirmClick={this.onConfirmTest.bind(this)}
               >
                   <View>弹出</View>

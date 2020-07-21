@@ -30,8 +30,23 @@ export default class Index extends Component {
     }
 
     componentDidMount () {
-
+        Taro.showShareMenu({
+            withShareTicket: true,
+            menus: ['shareAppMessage', 'shareTimeline']
+        })
     }
+
+
+    onShareAppMessage(e){
+        console.log(1,e)
+    }
+
+    onShareTimeline(e){
+        return {
+            title:'测试设置一下标题111'
+        }
+    }
+
 
     jumpLink(url){
         Taro.navigateTo({

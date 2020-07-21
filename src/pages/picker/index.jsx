@@ -163,9 +163,11 @@ export default class Index extends Component {
       // const _lists = Taro.getStorageSync('citysData')
       return (
           <View className='index'>
+
               <WiPicker
                   list={_list}
-                  rangeKey='name'
+                  rangeKey='label'
+                  // value={[0,1,1]}
                   confirmClick={this.onConfirmTest.bind(this)}
               >
                   <View>弹出</View>

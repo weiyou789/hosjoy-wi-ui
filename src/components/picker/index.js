@@ -16,6 +16,9 @@ export default class WiPicker extends WiComponent{
         }
         this.listArrs = []
         this.timer = null
+    }
+
+    componentDidMount(){
         const { list,mode } = this.props
         if(mode === 'multiSelector'){
             this.initList(list)
@@ -24,14 +27,15 @@ export default class WiPicker extends WiComponent{
 
 
     componentWillReceiveProps(nextProps){
-        const { list } = nextProps
+        /*const { list } = nextProps
         if (this.props.list !== list) {
             this.initList(list)
-        }
+        }*/
     }
 
     initList(list){
         let arr = []
+        const { value } = this.props
         for(let i = 0;i<list.length;i++){
             if(i===0&&list[i].children&&list[i].children.length>0){
                 this.initList(list[i].children)
@@ -41,13 +45,14 @@ export default class WiPicker extends WiComponent{
         this.listArrs.push(arr)
         this.timer = setTimeout(()=>{
             this.setState({
-                _lists:this.listArrs.reverse()
+                _lists:this.listArrs.reverse(),
+                _value:value
             },()=>{
                 clearTimeout(this.timer)
+
             })
 
         })
-
     }
 
     onChange(e){
@@ -126,7 +131,8 @@ WiPicker.defaultProps = {
     rangeKey:'label',
     confirmClick(){},
     start:'2015-09-01',
-    end:'2020-09-01'
+    end:'2020-09-01',
+    value:[0,0,0]
 }
 
 WiPicker.PropTypes = {
@@ -135,5 +141,6 @@ WiPicker.PropTypes = {
     confirmClick:PropTypes.func,
     rangeKey:PropTypes.string,
     start:PropTypes.string,
-    end:PropTypes.string
+    end:PropTypes.string,
+    value:PropTypes.array
 }
