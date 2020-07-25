@@ -13,31 +13,18 @@ export default class Index extends Component {
         this.jumpLink.bind(this)
     }
 
-    async componentWillMount () {
-        const res = await Taro.request({
-            url:'https://testccp.hosjoy.com:4832/common/region/provinces/nesting',
-        })
-        let arr = res.data.map((item)=>{
-            item.cities.map((it)=>{
-                it.children = it.countries||[]
-            })
-            return {
-                ...item,
-                children:item.cities||[]
-            }
-        })
-        Taro.setStorageSync('citysData',arr)
+    componentWillMount () {
     }
 
     componentDidMount () {
-        Taro.showShareMenu({
+        /*Taro.showShareMenu({
             withShareTicket: true,
             menus: ['shareAppMessage', 'shareTimeline']
-        })
+        })*/
     }
 
 
-    onShareAppMessage(e){
+    /*onShareAppMessage(e){
         console.log(1,e)
     }
 
@@ -45,7 +32,7 @@ export default class Index extends Component {
         return {
             title:'测试设置一下标题111'
         }
-    }
+    }*/
 
 
     jumpLink(url){

@@ -19,18 +19,14 @@ export default class WiPicker extends WiComponent{
     }
 
     componentDidMount(){
-        const { list,mode } = this.props
-        if(mode === 'multiSelector'){
-            this.initList(list)
-        }
     }
 
 
     componentWillReceiveProps(nextProps){
-        /*const { list } = nextProps
-        if (this.props.list !== list) {
+        const { list,mode } = nextProps
+        if (mode==='multiSelector') {
             this.initList(list)
-        }*/
+        }
     }
 
     initList(list){
@@ -46,7 +42,7 @@ export default class WiPicker extends WiComponent{
         this.timer = setTimeout(()=>{
             this.setState({
                 _lists:this.listArrs.reverse(),
-                _value:value
+                _value:value||[0,0,0]
             },()=>{
                 clearTimeout(this.timer)
 

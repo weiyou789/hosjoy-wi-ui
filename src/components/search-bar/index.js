@@ -41,6 +41,8 @@ export default class WiSearchBar extends WiComponent{
         }
     }
 
+    handleConfirm = (...arg) => this.props.onConfirm(...arg)
+
     render(){
         const {
             className,
@@ -93,6 +95,7 @@ export default class WiSearchBar extends WiComponent{
                         onInput={this.handleChange}
                         onFocus={this.handleFocus}
                         onBlur={this.handleBlur}
+                        onConfirm={this.handleConfirm}
                     />
                     <View
                         className='wi-search-bar__clear'
@@ -122,7 +125,8 @@ WiSearchBar.defaultProps = {
     actionStyle:'',
     inputType:'text',
     value:'',
-    onChange(){}
+    onChange(){},
+    onActionClick(){},
 }
 
 WiSearchBar.PropTypes = {
@@ -132,6 +136,7 @@ WiSearchBar.PropTypes = {
     actionName:PropTypes.string,
     inputType: PropTypes.oneOf(['text', 'number', 'idcard', 'digit']),
     onChange: PropTypes.func,
+    onActionClick: PropTypes.func,
     value:PropTypes.string,
     actionStyle:PropTypes.oneOfType([
         PropTypes.array,

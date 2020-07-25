@@ -12,13 +12,13 @@ export default class Index extends Component {
         this.state = {
             lists:[]
         }
+        this.citysData = null
     }
 
-    componentWillMount () { }
+    async componentWillMount () {
 
-    async componentDidMount () {
-        /*const res = await Taro.request({
-            url:'https://testccp.hosjoy.com:4832/common/region/provinces/nesting',
+        const res = await Taro.request({
+            url:'https://ccp-test245.hosjoy.com/common/region/provinces/nesting',
         })
         let arr = res.data.map((item)=>{
             item.cities.map((it)=>{
@@ -26,15 +26,14 @@ export default class Index extends Component {
             })
             return {
                 ...item,
-                children:item.cities
+                children:item.cities||[]
             }
         })
+        Taro.setStorageSync('citysData',arr)
+        this.forceUpdate()
+    }
 
-        this.setState({
-            lists:arr
-        })*/
-        // this.arr = arr
-        // console.log(arr)
+    componentDidMount () {
     }
 
     componentWillUnmount () { }
@@ -160,13 +159,14 @@ export default class Index extends Component {
               ]
           }
       ]
-      // const _lists = Taro.getStorageSync('citysData')
+      const _lists = Taro.getStorageSync('citysData')
+      console.log(_lists)
       return (
           <View className='index'>
 
               <WiPicker
-                  list={_list}
-                  rangeKey='label'
+                  list={_lists}
+                  rangeKey='name'
                   // value={[0,1,1]}
                   confirmClick={this.onConfirmTest.bind(this)}
               >
