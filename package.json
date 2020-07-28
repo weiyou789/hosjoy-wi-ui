@@ -1,8 +1,8 @@
 {
-  "name": "hosjoy-mi-ui",
-  "version": "1.1.1",
+  "name": "hosjoy-wi-ui",
+  "version": "2.0.0",
   "private": false,
-  "description": "mi-ui",
+  "description": "wi-ui",
   "main": "dist/index.js",
   "templateInfo": {
     "name": "default",
