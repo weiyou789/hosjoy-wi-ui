@@ -16,7 +16,6 @@ export default class Index extends Component {
     }
 
     async componentWillMount () {
-
         const res = await Taro.request({
             url:'https://ccp-test245.hosjoy.com/common/region/provinces/nesting',
         })
@@ -29,14 +28,16 @@ export default class Index extends Component {
                 children:item.cities||[]
             }
         })
-        Taro.setStorageSync('citysData',arr)
+        this.citysData = arr
         this.forceUpdate()
+
     }
 
     componentDidMount () {
     }
 
-    componentWillUnmount () { }
+    componentWillUnmount () {
+    }
 
     componentDidShow () { }
 
@@ -159,13 +160,12 @@ export default class Index extends Component {
               ]
           }
       ]
-      const _lists = Taro.getStorageSync('citysData')
-      console.log(_lists)
+      const { citysData } = this
       return (
           <View className='index'>
 
               <WiPicker
-                  list={_lists}
+                  list={citysData}
                   rangeKey='name'
                   // value={[0,1,1]}
                   confirmClick={this.onConfirmTest.bind(this)}

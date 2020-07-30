@@ -42,8 +42,12 @@ export default class WiPicker extends WiComponent{
         this.timer = setTimeout(()=>{
             this.setState({
                 _lists:this.listArrs.reverse(),
-                _value:value||[0,0,0]
             },()=>{
+                if(value.length>0){
+                    this.setState({
+                        _value:value
+                    })
+                }
                 clearTimeout(this.timer)
 
             })
@@ -128,7 +132,7 @@ WiPicker.defaultProps = {
     confirmClick(){},
     start:'2015-09-01',
     end:'2020-09-01',
-    value:[0,0,0]
+    value:[]
 }
 
 WiPicker.PropTypes = {
