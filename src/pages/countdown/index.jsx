@@ -37,6 +37,7 @@ export default class Index extends Component {
           <View className='index'>
               <WiCountdown
                   endTime={this.state.endTime}
+                  // countTime="54783"
                   isShowDay
                   onTimeUp={this.timeoutDone}
                   classNameText="test1"

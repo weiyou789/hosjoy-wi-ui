@@ -13,8 +13,10 @@ export default class WiCountdown extends WiComponent {
         super(props)
         const {
             endTime,
+            countTime
         } = this.props
         this._endTime = endTime
+        this._countTime = +countTime
         const { day, hours, minutes, seconds, milliseconds } = this.calculateTime()
         this._count = 0
         this.state = {
@@ -29,20 +31,20 @@ export default class WiCountdown extends WiComponent {
 
     calculateTime(){
         let [day, hours, minutes, seconds,milliseconds] = [0, 0, 0, 0, 0]
-        let _endTime,_startTime,_count
+        let _endTime,_startTime,_count,_countTime
         _startTime = toMillSeconds(new Date())
         _endTime = toMillSeconds(this._endTime)
         _count =  this._count = _endTime -_startTime
+        _countTime = this._countTime
 
-        /*if(typeof this._endTime === "number"){//时间差兼容
-            _startTime = 0
-            _endTime = this._endTime
-            _count =  this._count
-        } else {
-            _startTime = toMillSeconds(new Date())
-            _endTime = toMillSeconds(this._endTime)
-            _count =  this._count = _endTime -_startTime
-        }*/
+        if(_countTime>0){
+            this._countTime-=100
+            day = this.props.isShowDay ? Math.floor(_countTime/1000 / (60 * 60 * 24)) : 0
+            hours = Math.floor(_countTime/1000 / (60 * 60)) - (day * 24)
+            minutes = Math.floor(_countTime/1000 / 60) - (day * 24 * 60) - (hours * 60)
+            seconds = Math.floor(_countTime/1000) - (day * 24 * 60 * 60) - (hours * 60 * 60) - (minutes * 60)
+            milliseconds = Math.floor(_countTime % 1000/100)
+        }
 
         if(_count>0){
             day = this.props.isShowDay ? Math.floor(_count/1000 / (60 * 60 * 24)) : 0
@@ -71,15 +73,21 @@ export default class WiCountdown extends WiComponent {
             milliseconds
         })
 
-        /*if(typeof this._endTime === "number"){//时间差兼容
-            this._count-=100
-        }*/
-
-        if (this._count < 100) {
-            clearTimeout(this.timer)
-            this.props.onTimeUp()
-            return
+        if(this._countTime>0){
+            if (this._countTime < 100) {
+                clearTimeout(this.timer)
+                this.props.onTimeUp()
+                return
+            }
+        } else {
+            if (this._count < 100) {
+                clearTimeout(this.timer)
+                this.props.onTimeUp()
+                return
+            }
         }
+
+
 
         this.timer = setTimeout(() => {
             this.countdown()
@@ -186,8 +194,12 @@ WiCountdown.PropTypes = {
     endTime: PropTypes.oneOfType([
         PropTypes.object,
         PropTypes.string,
-        // PropTypes.number
+        PropTypes.number
     ]),
-    countTime:PropTypes.number,
+    countTime:PropTypes.oneOfType([
+        PropTypes.object,
+        PropTypes.string,
+        PropTypes.number
+    ]),
     onTimeUp: PropTypes.func,
 }
