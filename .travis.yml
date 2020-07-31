@@ -6,6 +6,10 @@ dist: xenial
 arch: amd64
 install:
   - yarn --frozen-lockfile
+before_script:
+  - npm install -g @tarojs/cli@2.1.5
+script:
+  - npm run build:publish
 deploy:
   provider: npm
   email: "3433364@qq.com"
