@@ -1,0 +1,68 @@
+@import '../variables/default.scss';
+@import '../mixins/index.scss';
+
+$wi-drawer-duration: 300ms;
+
+.wi-drawer {
+  position: relative;
+  z-index: $zindex-drawer;
+
+  /* elements */
+  &__mask {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity $wi-drawer-duration $timing-func;
+  }
+
+  &__content {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: $wi-drawer-content-width;
+    text-align: left;
+    background-color: $color-bg;
+    opacity: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    z-index: 1;
+  }
+
+  /* modifiers */
+  &--left {
+    .wi-drawer__content {
+      left: 0;
+      transform: translateX(-100%);
+    }
+  }
+
+  &--right {
+    .wi-drawer__content {
+      right: 0;
+      transform: translateX(100%);
+    }
+  }
+
+  &--show {
+    .wi-drawer__content {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+  }
+}
+
+@keyframes anim-show {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes anim-hide {
+  100% {
+    opacity: 0;
+  }
+}
