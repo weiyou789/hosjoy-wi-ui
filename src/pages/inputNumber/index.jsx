@@ -28,10 +28,13 @@ export default class Index extends Component {
     }
 
     testOnBlur(value){
+        console.log('当前值为',value)
+    }
+
+    testOnChange(value){
         this.setState({
             val:value
         })
-        console.log('当前值为',value)
     }
 
   config = {
@@ -43,11 +46,12 @@ export default class Index extends Component {
           <View className='index'>
               <WiInputNumber
                   min={1}
+                  max={99}
                   step={1}
                   value={this.state.val}
                   onErrorInput={this.testOnErr.bind(this)}
                   onBlur={this.testOnBlur.bind(this)}
-                  onChange={this.testOnBlur.bind(this)}
+                  onChange={this.testOnChange.bind(this)}
               />
           </View>
       )

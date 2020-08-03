@@ -1,8 +1,8 @@
 {
   "name": "hosjoy-wi-ui",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "private": false,
-  "description": "一款基于taro的ui组件,比taroui更好用",
+  "description": "一款基于taro的ui组件库",
   "main": "dist/index.js",
   "templateInfo": {
     "name": "default",

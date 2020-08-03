@@ -130,7 +130,8 @@ export default class WiCountdown extends WiComponent {
             customStyle,
             format,
             isShowDay,
-            isShowMillSeconds
+            isShowMillSeconds,
+            isShowSecondsFormat
         } =  this.props
         const {
             day,
@@ -150,7 +151,7 @@ export default class WiCountdown extends WiComponent {
                 {isShowDay&&this.renderTime(day,format.day)}
                 {this.renderTime(hours,format.hours)}
                 {this.renderTime(minutes,format.minutes)}
-                {this.renderTime(seconds,isShowMillSeconds?format.seconds:'')}
+                {this.renderTime(seconds,isShowSecondsFormat?format.seconds:'')}
                 {isShowMillSeconds&&this.renderTime(milliseconds,'')}
             </View>
         )
@@ -164,6 +165,7 @@ WiCountdown.defaultProps = {
     customStyle:'',
     isShowDay:false,
     isShowMillSeconds:false,
+    isShowSecondsFormat:false,
     format: {
         day: ':',
         hours: ':',
@@ -191,6 +193,7 @@ WiCountdown.PropTypes = {
     format: PropTypes.object,
     isShowDay: PropTypes.bool,
     isShowMillSeconds: PropTypes.bool,
+    isShowSecondsFormat:PropTypes.bool,
     endTime: PropTypes.oneOfType([
         PropTypes.object,
         PropTypes.string,

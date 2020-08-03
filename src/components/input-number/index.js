@@ -38,6 +38,7 @@ export default class WiInputNumber extends WiComponent {
         const deltaValue = clickType === 'minus' ? -step : step
         let newValue = +value+deltaValue
         newValue = this.handleValue(newValue)
+        console.log(1212,newValue)
         this.props.onChange(newValue)
     }
 
@@ -47,9 +48,10 @@ export default class WiInputNumber extends WiComponent {
             max,
             onErrorInput
         } = this.props
-        let resultValue = value === '' ? min : value
+        // let resultValue = value === '' ? min : value
+        let resultValue = value
         if(resultValue < min){
-            resultValue = min
+            // resultValue = 0
             onErrorInput&&onErrorInput({
                 type: 'LOW',
                 errorValue: resultValue,
@@ -66,17 +68,23 @@ export default class WiInputNumber extends WiComponent {
     }
 
     handleBlur = (e) => {
-        const { disabled } = this.props
+        const { disabled,min } = this.props
         if (disabled) return
         const newValue = this.handleValue(e.target.value)
         this.props.onBlur(+newValue)
+        if(newValue<min){
+            this.props.onChange(min)
+        }
     }
 
     handleInput = (e) => {
-        const { disabled } = this.props
+        const { disabled,max } = this.props
         if (disabled) return
         const newValue = this.handleValue(e.target.value)
         this.props.onChange(+newValue)
+        if(max===newValue){
+            return newValue
+        }
     }
 
     render () {
@@ -114,7 +122,7 @@ export default class WiInputNumber extends WiComponent {
                     value={inputValue}
                     disabled={disabledInput || disabled}
                     onInput={this.handleInput}
-                    // onBlur={this.handleBlur}
+                    onBlur={this.handleBlur}
                 />
                 <View className={plusBtnCls} onClick={this.handleClick.bind(this, 'plus')}>
                     <Text className='wi-input-number__btn-add'>+</Text>
