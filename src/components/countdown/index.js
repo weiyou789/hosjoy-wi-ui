@@ -117,7 +117,7 @@ export default class WiCountdown extends WiComponent {
     }
 
     componentWillReceiveProps(nextProps){
-        if (JSON.stringify(this.props) === JSON.stringify(nextProps)) return
+        // if (JSON.stringify(this.props) === JSON.stringify(nextProps)) return
         const { endTime,countTime } = nextProps
         clearTimeout(this.timer)
         this._endTime = endTime
