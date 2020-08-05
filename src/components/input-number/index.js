@@ -82,7 +82,7 @@ export default class WiInputNumber extends WiComponent {
         if (disabled) return
         const newValue = this.handleValue(e.target.value)
         this.props.onChange(+newValue)
-        if(max===newValue){
+        if(max === +newValue){
             return newValue
         }
     }
