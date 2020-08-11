@@ -38,7 +38,6 @@ export default class WiInputNumber extends WiComponent {
         const deltaValue = clickType === 'minus' ? -step : step
         let newValue = +value+deltaValue
         newValue = this.handleValue(newValue)
-        console.log(1212,newValue)
         this.props.onChange(newValue)
     }
 

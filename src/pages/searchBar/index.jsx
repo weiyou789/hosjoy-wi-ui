@@ -48,6 +48,7 @@ export default class Index extends Component {
                   onChange={this.onChange.bind(this)}
                   value={this.state.value}
                   onActionClick={this.searchClick.bind(this)}
+                  onConfirm={this.searchClick.bind(this)}
               />
           </View>
       )
