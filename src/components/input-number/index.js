@@ -38,7 +38,6 @@ export default class WiInputNumber extends WiComponent {
         const deltaValue = clickType === 'minus' ? -step : step
         let newValue = +value+deltaValue
         newValue = this.handleValue(newValue)
-        console.log(1212,newValue)
         this.props.onChange(newValue)
     }
 
@@ -82,7 +81,7 @@ export default class WiInputNumber extends WiComponent {
         if (disabled) return
         const newValue = this.handleValue(e.target.value)
         this.props.onChange(+newValue)
-        if(max===newValue){
+        if(max <= +newValue){
             return newValue
         }
     }

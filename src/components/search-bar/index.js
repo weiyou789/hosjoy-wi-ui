@@ -126,6 +126,7 @@ WiSearchBar.defaultProps = {
     inputType:'text',
     value:'',
     onChange(){},
+    onConfirm: () => {},
     onActionClick(){},
 }
 
@@ -137,6 +138,7 @@ WiSearchBar.PropTypes = {
     inputType: PropTypes.oneOf(['text', 'number', 'idcard', 'digit']),
     onChange: PropTypes.func,
     onActionClick: PropTypes.func,
+    onConfirm: PropTypes.func,
     value:PropTypes.string,
     actionStyle:PropTypes.oneOfType([
         PropTypes.array,
