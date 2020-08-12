@@ -101,7 +101,7 @@ export default class WiCountdown extends WiComponent {
                 <View className='wi-countdown__time-box'>
                     <Text className={
                         classNames({
-                            'at-countdown__time':true,
+                            'wi-countdown__time':true,
                         },classNameText)}
                     >
                         {num<=9?`0${num}`:num}
