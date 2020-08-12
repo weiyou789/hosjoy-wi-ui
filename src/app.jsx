@@ -34,7 +34,9 @@ class App extends Component {
             'pages/imagePicker/index',
             'pages/modal/index',
             'pages/picker/index',
-            'pages/searchBar/index'
+            'pages/searchBar/index',
+            'pages/input/index',
+            'pages/textarea/index'
         ],
         window: {
             backgroundTextStyle: 'light',
