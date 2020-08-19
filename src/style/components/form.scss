@@ -1,0 +1,10 @@
+@import '../variables/default.scss';
+@import '../mixins/index.scss';
+
+$wi-form-bg-color: $color-bg;
+
+.wi-form {
+  display: block;
+  background-color: $wi-form-bg-color;
+  @include hairline-top-bottom();
+}
