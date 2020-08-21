@@ -52,7 +52,8 @@ export default class WiSearchBar extends WiComponent{
             actionName,
             actionStyle,
             value,
-            inputType
+            inputType,
+            searchHeight
         } = this.props
         const {
             isFocus
@@ -69,12 +70,16 @@ export default class WiSearchBar extends WiComponent{
             clearIconStyle.display = 'none'
             placeholderStyle.visibility = 'visible'
         }
+        const customHeight = {
+            height:`${searchHeight}PX`,
+            borderRadius:`${searchHeight/2}PX`
+        }
         return (
             <View
                 className={rootCls}
                 style={customStyle}
             >
-                <View className='wi-search-bar__input-cnt'>
+                <View className='wi-search-bar__input-cnt' style={customHeight}>
                     <View
                         className='wi-search-bar__placeholder-wrap'
                     >
@@ -125,6 +130,7 @@ WiSearchBar.defaultProps = {
     actionStyle:'',
     inputType:'text',
     value:'',
+    searchHeight:30,
     onChange(){},
     onConfirm: () => {},
     onActionClick(){},
@@ -140,6 +146,7 @@ WiSearchBar.PropTypes = {
     onActionClick: PropTypes.func,
     onConfirm: PropTypes.func,
     value:PropTypes.string,
+    searchHeight:PropTypes.number,
     actionStyle:PropTypes.oneOfType([
         PropTypes.array,
         PropTypes.string,

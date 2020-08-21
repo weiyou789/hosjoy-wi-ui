@@ -49,6 +49,7 @@ export default class Index extends Component {
                   value={this.state.value}
                   onActionClick={this.searchClick.bind(this)}
                   onConfirm={this.searchClick.bind(this)}
+                  searchHeight='40'
               />
           </View>
       )
