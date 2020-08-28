@@ -9,7 +9,10 @@ const config = {
   designWidth: 750,
   sourceRoot: 'src',
   outputRoot: isBuildComponent ? 'dist' : `demo/${process.env.TARO_ENV}`,
-  plugins: {},
+  plugins: [
+      '@tarojs/plugin-sass',
+      '@tarojs/plugin-terser'
+  ],
   babel: {
     sourceMap: true,
     presets: [
