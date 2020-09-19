@@ -12,13 +12,20 @@ export default class WiPicker extends WiComponent{
         super(props)
         this.state = {
             _lists:[],
-            _value:[0,0,0]
+            _value:[0,0,0],
+            _val:0
         }
         this.listArrs = []
         this.timer = null
     }
 
     componentDidMount(){
+        const { value,mode } = this.props
+        if(mode==='selector'){
+            this.setState({
+                _val:value
+            })
+        }
     }
 
 
@@ -56,13 +63,18 @@ export default class WiPicker extends WiComponent{
     }
 
     onChange(e){
-        const { confirmClick } = this.props
+        const {value} = e.detail
+        const { confirmClick,mode } = this.props
         const { _value,_lists } = this.state
-        let currentValue = []
-        for(let i = 0;i<_value.length;i++){
-            currentValue[i] = _lists[i][_value[i]]
+        if(mode==='selector'){
+            confirmClick(value)
+        } else if(mode==='multiSelector') {
+            let currentValue = []
+            for(let i = 0;i<_value.length;i++){
+                currentValue[i] = _lists[i][_value[i]]
+            }
+            confirmClick(currentValue)
         }
-        confirmClick(currentValue)
     }
 
     onChangeTime(e){
@@ -97,7 +109,7 @@ export default class WiPicker extends WiComponent{
 
 
     render(){
-        const { mode,rangeKey,start,end } = this.props
+        const { mode,rangeKey,start,end,list } = this.props
         const { _lists } = this.state
         if(mode==='date'||mode==='time'){
             return <Picker
@@ -105,6 +117,16 @@ export default class WiPicker extends WiComponent{
                 start={start}
                 end={end}
                 onChange={this.onChangeTime}
+            >
+                {this.props.children}
+            </Picker>
+        }
+        if(mode==='selector'){
+            return <Picker
+                mode={mode}
+                value={this.state._val}
+                onChange={this.onChange}
+                range={list}
             >
                 {this.props.children}
             </Picker>
@@ -142,5 +164,8 @@ WiPicker.PropTypes = {
     rangeKey:PropTypes.string,
     start:PropTypes.string,
     end:PropTypes.string,
-    value:PropTypes.array
+    value:PropTypes.oneOfType([
+        PropTypes.array,
+        PropTypes.number,
+    ])
 }

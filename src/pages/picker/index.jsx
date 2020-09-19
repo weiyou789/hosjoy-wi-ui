@@ -55,7 +55,7 @@ export default class Index extends Component {
   }
 
   render () {
-      const _list = [
+      /*const _list = [
           {
               label:'美国',
               children:[
@@ -159,14 +159,17 @@ export default class Index extends Component {
                   },
               ]
           }
-      ]
+      ]*/
+      const _list = ['南京','北京','上海']
       const { citysData } = this
       return (
           <View className='index'>
 
               <WiPicker
-                  list={citysData}
-                  rangeKey='name'
+                  list={_list}
+                  // rangeKey='name'
+                  mode='selector'
+                  value={1}
                   // value={[0,1,1]}
                   confirmClick={this.onConfirmTest.bind(this)}
               >
