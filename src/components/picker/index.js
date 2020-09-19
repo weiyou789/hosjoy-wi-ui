@@ -67,7 +67,7 @@ export default class WiPicker extends WiComponent{
         const { confirmClick,mode } = this.props
         const { _value,_lists } = this.state
         if(mode==='selector'){
-            confirmClick(value)
+            confirmClick(+value)
         } else if(mode==='multiSelector') {
             let currentValue = []
             for(let i = 0;i<_value.length;i++){
