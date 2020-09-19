@@ -7,7 +7,7 @@ arch: amd64
 install:
   - yarn --frozen-lockfile
 before_script:
-  - npm install -g @tarojs/cli@2.1.5
+  - npm install -g @tarojs/cli@2.2.11
 script:
   - npm run build:publish
 deploy:
