@@ -10,7 +10,8 @@ export default class Index extends Component {
     constructor(props){
         super(props)
         this.state = {
-            lists:[]
+            lists:[],
+            value:1
         }
         this.citysData = null
     }
@@ -48,14 +49,23 @@ export default class Index extends Component {
     }
 
     onConfirmTest(val){
-        console.log(111, val)
+        // console.log(111, val)
+        this.setState({
+            value:val
+        })
     }
+
+
+    onConfirmTest2(val){
+        console.log(val)
+    }
+
   config = {
       navigationBarTitleText: 'Picker组件'
   }
 
   render () {
-      /*const _list = [
+      const _list2 = [
           {
               label:'美国',
               children:[
@@ -159,9 +169,10 @@ export default class Index extends Component {
                   },
               ]
           }
-      ]*/
+      ]
       const _list = ['南京','北京','上海']
       const { citysData } = this
+      const { value } = this.state
       return (
           <View className='index'>
 
@@ -169,13 +180,22 @@ export default class Index extends Component {
                   list={_list}
                   // rangeKey='name'
                   mode='selector'
-                  value={1}
+                  value={value}
                   // value={[0,1,1]}
                   confirmClick={this.onConfirmTest.bind(this)}
               >
                   <View>弹出</View>
               </WiPicker>
-
+              <WiPicker
+                  list={_list2}
+                  // rangeKey='name'
+                  mode='multiSelector'
+                  // value={1}
+                  // value={[0,1,1]}
+                  confirmClick={this.onConfirmTest2.bind(this)}
+              >
+                  <View>弹出2</View>
+              </WiPicker>
           </View>
       )
   }

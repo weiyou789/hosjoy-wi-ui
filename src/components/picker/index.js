@@ -15,29 +15,40 @@ export default class WiPicker extends WiComponent{
             _value:[0,0,0],
             _val:0
         }
-        this.listArrs = []
         this.timer = null
     }
 
     componentDidMount(){
-        const { value,mode } = this.props
+        const { value,mode,list } = this.props
         if(mode==='selector'){
             this.setState({
                 _val:value
             })
+        } else if(mode==='multiSelector'){
+            this.initList(list)
         }
     }
 
 
     componentWillReceiveProps(nextProps){
-        const { list,mode } = nextProps
-        if (mode==='multiSelector') {
-            this.initList(list)
+        const { value,mode } = nextProps
+        if(this.props.value===value){
+            return
+        }
+        if(mode==='selector'){
+            this.setState({
+                _val:value
+            })
+        } else if(mode==='multiSelector'){
+            this.setState({
+                _value:value
+            })
         }
     }
 
     initList(list){
         let arr = []
+        this.listArrs = []
         const { value } = this.props
         for(let i = 0;i<list.length;i++){
             if(i===0&&list[i].children&&list[i].children.length>0){
@@ -71,7 +82,7 @@ export default class WiPicker extends WiComponent{
         } else if(mode==='multiSelector') {
             let currentValue = []
             for(let i = 0;i<_value.length;i++){
-                currentValue[i] = _lists[i][_value[i]]
+                currentValue[i] = Object.assign(_lists[i][_value[i]],{index:_value[i]})
             }
             confirmClick(currentValue)
         }
