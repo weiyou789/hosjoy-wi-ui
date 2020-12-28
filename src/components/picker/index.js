@@ -57,20 +57,22 @@ export default class WiPicker extends WiComponent{
             arr.push(list[i])
         }
         this.listArrs.push(arr)
-        this.timer = setTimeout(()=>{
-            this.setState({
-                _lists:this.listArrs.reverse(),
-            },()=>{
-                if(value.length>0){
-                    this.setState({
-                        _value:value
-                    })
-                }
-                clearTimeout(this.timer)
+        if(!this.timer){
+            this.timer = setTimeout(()=>{
+                this.setState({
+                    _lists:this.listArrs.reverse(),
+                },()=>{
+                    if(value.length>0){
+                        this.setState({
+                            _value:value
+                        })
+                    }
+                    clearTimeout(this.timer)
+
+                })
 
             })
-
-        })
+        }
     }
 
     onChange(e){

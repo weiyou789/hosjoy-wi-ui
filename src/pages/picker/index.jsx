@@ -49,7 +49,7 @@ export default class Index extends Component {
     }
 
     onConfirmTest(val){
-        // console.log(111, val)
+        console.log(111, val)
         this.setState({
             value:val
         })
@@ -60,11 +60,78 @@ export default class Index extends Component {
         console.log(val)
     }
 
+    onConfirmTest3(val){
+        console.log(val)
+    }
+
   config = {
       navigationBarTitleText: 'Picker组件'
   }
 
   render () {
+
+      const _list3 = [
+          {
+              label:'美国',
+              children:[
+                  {
+                      label:'上海'
+                  },
+                  {
+                      label:'北京'
+                  },
+                  {
+                      label:'南京'
+                  },
+                  {
+                      label:'深圳'
+                  },
+              ]
+          },
+          {
+              label:'中国',
+              children:[
+                  {
+                      label:'芜湖'
+                  },
+                  {
+                      label:'合肥'
+                  },
+                  {
+                      label:'滁州'
+                  },
+              ]
+          },
+          {
+              label:'巴西',
+              children:[
+                  {
+                      label:'上海'
+                  },
+                  {
+                      label:'北京'
+                  },
+                  {
+                      label:'南京'
+                  },
+              ]
+          },
+          {
+              label:'日本',
+              children:[
+                  {
+                      label:'上海'
+                  },
+                  {
+                      label:'北京'
+                  },
+                  {
+                      label:'南京'
+                  },
+              ]
+          }
+      ]
+
       const _list2 = [
           {
               label:'美国',
@@ -195,6 +262,17 @@ export default class Index extends Component {
                   confirmClick={this.onConfirmTest2.bind(this)}
               >
                   <View>弹出2</View>
+              </WiPicker>
+
+              <WiPicker
+                  list={_list3}
+                  // rangeKey='name'
+                  mode='multiSelector'
+                  // value={1}
+                  value={[0,0]}
+                  confirmClick={this.onConfirmTest3.bind(this)}
+              >
+                  <View>弹出3</View>
               </WiPicker>
           </View>
       )
