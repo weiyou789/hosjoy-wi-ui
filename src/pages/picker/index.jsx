@@ -258,7 +258,7 @@ export default class Index extends Component {
                   // rangeKey='name'
                   mode='multiSelector'
                   // value={1}
-                  // value={[0,1,1]}
+                  value={[1,1,2]}
                   confirmClick={this.onConfirmTest2.bind(this)}
               >
                   <View>弹出2</View>
@@ -269,7 +269,7 @@ export default class Index extends Component {
                   // rangeKey='name'
                   mode='multiSelector'
                   // value={1}
-                  value={[0,0]}
+                  value={[1,1]}
                   confirmClick={this.onConfirmTest3.bind(this)}
               >
                   <View>弹出3</View>

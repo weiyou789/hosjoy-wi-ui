@@ -25,13 +25,13 @@ export default class WiPicker extends WiComponent{
                 _val:value
             })
         } else if(mode==='multiSelector'){
-            this.initList(list)
+            this.initList(list,value[0])
         }
     }
 
 
     componentWillReceiveProps(nextProps){
-        const { value,mode } = nextProps
+        const { value,mode,list } = nextProps
         if(this.props.value===value){
             return
         }
@@ -40,19 +40,20 @@ export default class WiPicker extends WiComponent{
                 _val:value
             })
         } else if(mode==='multiSelector'){
-            this.setState({
+            this.initList(list,value[0])
+            /*this.setState({
                 _value:value
-            })
+            })*/
         }
     }
 
-    initList(list){
+    initList(list,j){
         let arr = []
         this.listArrs = []
         const { value } = this.props
         for(let i = 0;i<list.length;i++){
-            if(i===0&&list[i].children&&list[i].children.length>0){
-                this.initList(list[i].children)
+            if(i===j&&list[j].children&&list[j].children.length>0){
+                this.initList(list[i].children,j)
             }
             arr.push(list[i])
         }
@@ -72,7 +73,9 @@ export default class WiPicker extends WiComponent{
                 })
 
             })
+
         }
+
     }
 
     onChange(e){
@@ -167,7 +170,7 @@ WiPicker.defaultProps = {
     confirmClick(){},
     start:'2015-09-01',
     end:'2020-09-01',
-    value:[]
+    value:[0,0,0]
 }
 
 WiPicker.PropTypes = {
