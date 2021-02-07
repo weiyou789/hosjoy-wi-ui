@@ -36,7 +36,8 @@ class App extends Component {
             'pages/picker/index',
             'pages/searchBar/index',
             'pages/input/index',
-            'pages/textarea/index'
+            'pages/textarea/index',
+            'pages/swipeAction/index'
         ],
         window: {
             backgroundTextStyle: 'light',
